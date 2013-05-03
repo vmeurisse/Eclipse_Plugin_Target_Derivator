@@ -27,15 +27,12 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 public class TargetDerivatorAction implements IWorkbenchWindowActionDelegate {
 
     private static final List<String> foldersToExclude = Arrays.asList(
-            "target",
-            "tmp",
-            "temp",
-            "bin",
-            "bin-test",
-            "test-output",
-            "precompiled");
+            "target", /* maven target */
+            "node_modules", /* node dependencies*/
+            "output",
+            "bin");
 
-    private IWorkbenchWindow window;
+    // private IWorkbenchWindow window;
 
     /**
      * The constructor.
@@ -139,6 +136,6 @@ public class TargetDerivatorAction implements IWorkbenchWindowActionDelegate {
      */
     @Override
     public void init(IWorkbenchWindow window) {
-        this.window = window;
+        // this.window = window;
     }
 }
